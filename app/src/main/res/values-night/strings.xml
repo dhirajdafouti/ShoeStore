@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="login_screen_title">"LOGIN "</string>
+    <string name="welcome_screen_title">WELCOME</string>
+    <string name="shoe_listing_screen_title">SHOE LISTING</string>
+    <string name="logout_title">LOGOUT</string>
+    <string name="shoe_title">Enter Shoe Details </string>
+    <string name="shoe_name_title">Shoe Name</string>
+    <string name="shoe_name_text">Enter the Show Name</string>
+    <string name="company_name_title">Company</string>
+    <string name="shoe_size">Shoe Size</string>
+    <string name="shoe_size_hint">Enter the show size</string>
+    <string name="shoe_description_hint">Enter the Shoe Description</string>
+    <string name="no_shoe_list">"No shoe Available "</string>
+    <string name="data_saved">Data Saved Navigate To List Screen</string>
+    <string name="no_items_available">No Items Available</string>
+    <string name="login_user_name">Enter User Name</string>
+    <string name="login_password">Enter Login PassWord</string>
+    <string name="button_login">Login</string>
+    <string name="button_new_account">Add New Account</string>
+    <string name="tv_login">Login</string>
+    <string name="tv_password">PassWord</string>
+    <string name="tv_forget_password">Forget PassWord</string>
+    <string name="floating_button">floating</string>
+    <string name="instruction4">Happy Shopping!!!!</string>
+    <string name="instruction3">LogOut Once Done Through Option Menu at Top Right.</string>
+    <string name="instruction2">Added Entries Can be Seen in Shoe List Screen</string>
+    <string name="instruction1">Save Shoe Items Once Filled in Shoe Details.</string>
+    <string name="instruction_header">Follow Below Instruction</string>
+</resources>

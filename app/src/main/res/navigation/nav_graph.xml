@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation"
+    app:startDestination="@id/shoeStoreLoginScreen">
+
+    <fragment
+        android:id="@+id/shoeStoreLoginScreen"
+        android:name="com.udacity.shoestore.ui.navigationscreens.login.ShoeStoreLoginScreen"
+        android:label="@string/login_screen_title"
+        tools:layout="@layout/fragment_shoe_store_login_screen">
+        <action
+            android:id="@+id/action_shoeStoreLoginScreen_to_shoeStoreWelcomeScreen"
+            app:destination="@id/shoeStoreWelcomeScreen"
+            app:enterAnim="@anim/slide_in_left"
+            app:exitAnim="@anim/slide_in_right"
+            app:popEnterAnim="@anim/fade_in"
+            app:popExitAnim="@anim/fade_out"
+            app:popUpTo="@id/shoeStoreLoginScreen"
+            app:popUpToInclusive="false" />
+    </fragment>
+    <fragment
+        android:id="@+id/shoeStoreWelcomeScreen"
+        android:name="com.udacity.shoestore.ui.navigationscreens.welcome.ShoeStoreWelcomeScreen"
+        android:label="@string/welcome_screen_title"
+        tools:layout="@layout/fragment_shoe_store_welcome_screen">
+        <action
+            android:id="@+id/action_shoeStoreWelcomeScreen_to_shoeStoreInstructionScreen"
+            app:destination="@id/shoeStoreInstructionScreen"
+            app:enterAnim="@anim/slide_in_left"
+            app:exitAnim="@anim/slide_in_right"
+            app:popEnterAnim="@anim/fade_in"
+            app:popExitAnim="@anim/fade_out"
+            app:popUpToInclusive="false" />
+    </fragment>
+    <fragment
+        android:id="@+id/shoeStoreInstructionScreen"
+        android:name="com.udacity.shoestore.ui.navigationscreens.instructions.ShoeStoreInstructionScreen"
+        android:label="@string/instruction_screen_title"
+        tools:layout="@layout/fragment_shoe_store_instruction_screen">
+        <action
+            android:id="@+id/action_shoeStoreInstructionScreen_to_shoeStoreListingScreen"
+            app:destination="@id/shoeStoreListingScreen"
+            app:enterAnim="@anim/slide_in_left"
+            app:exitAnim="@anim/slide_in_right"
+            app:popEnterAnim="@anim/fade_in"
+            app:popExitAnim="@anim/fade_out"
+            app:popUpTo="@id/shoeStoreWelcomeScreen"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/shoeStoreListingScreen"
+        android:name="com.udacity.shoestore.ui.navigationscreens.shoelisting.ShoeStoreListingScreen"
+        android:label="@string/shoe_listing_screen_title"
+        tools:layout="@layout/fragment_shoe_store_listing_screen">
+        <action
+            android:id="@+id/action_shoeStoreListingScreen_to_shoeStoreDetailsScreen"
+            app:destination="@id/shoeStoreDetailsScreen"
+            app:enterAnim="@anim/slide_in_left"
+            app:exitAnim="@anim/slide_in_right"
+            app:popEnterAnim="@anim/fade_in"
+            app:popExitAnim="@anim/fade_out" />
+    </fragment>
+    <fragment
+        android:id="@+id/shoeStoreDetailsScreen"
+        android:name="com.udacity.shoestore.ui.navigationscreens.shoedetails.ShoeStoreDetailsScreen"
+        android:label="@string/shoe_details_screen_title"
+        tools:layout="@layout/fragment_shoe_store_details_screen">
+        <action
+            android:id="@+id/action_shoeStoreDetailsScreen_to_shoeStoreListingScreen"
+            app:destination="@id/shoeStoreListingScreen"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_in_left"
+            app:popUpTo="@id/shoeStoreListingScreen"
+            app:popUpToInclusive="true" />
+    </fragment>
+</navigation>

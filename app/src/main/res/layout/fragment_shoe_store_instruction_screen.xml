@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".ui.navigationscreens.instructions.ShoeStoreInstructionScreen">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:background="@color/white"
+        android:layout_height="match_parent">
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:ignore="MissingConstraints"
+            tools:layout_editor_absoluteY="50dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dimen8"
+                android:text="@string/instruction_header"
+                android:textAlignment="center"
+                android:textColor="@color/brown"
+                android:textSize="@dimen/dimen25sp"
+                android:textStyle="italic">
+            </TextView>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/brown"
+                android:layout_marginStart="@dimen/dimen30"
+                android:textStyle="bold"
+                android:textSize="@dimen/dimen15sp"
+                android:text="@string/instruction"
+                android:layout_marginTop="@dimen/dimen30" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/brown"
+                android:layout_marginStart="@dimen/dimen30"
+                android:textStyle="bold"
+                android:textSize="@dimen/dimen15sp"
+                android:text="@string/instruction0"
+                android:layout_marginTop="@dimen/dimen30" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/brown"
+                android:layout_marginStart="@dimen/dimen30"
+                android:textStyle="bold"
+                android:textSize="@dimen/dimen15sp"
+                android:text="@string/instruction1"
+                android:layout_marginTop="@dimen/dimen30">
+            </TextView>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/brown"
+                android:layout_marginStart="@dimen/dimen30"
+                android:textStyle="bold"
+                android:textSize="@dimen/dimen15sp"
+                android:text="@string/instruction2"
+                android:layout_marginTop="@dimen/dimen30">
+            </TextView>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/brown"
+                android:layout_marginStart="@dimen/dimen30"
+                android:textStyle="bold"
+                android:textSize="@dimen/dimen15sp"
+                android:text="@string/instruction3"
+                android:layout_marginTop="@dimen/dimen30">
+            </TextView>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/brown"
+                android:layout_marginStart="@dimen/dimen15sp"
+                android:textStyle="bold"
+                android:textSize="@dimen/dimen30"
+                android:textAlignment="center"
+                android:text="@string/instruction4"
+                android:layout_marginTop="@dimen/dimen30">
+            </TextView>
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+        <Button
+            android:id="@+id/instructionButton"
+            android:text="@string/Forword"
+            android:layout_width="wrap_content"
+            android:background="@color/colorPrimary"
+            android:textColor="@color/white"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/dimen20"
+            android:layout_marginBottom="@dimen/dimen20"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
+        </Button>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

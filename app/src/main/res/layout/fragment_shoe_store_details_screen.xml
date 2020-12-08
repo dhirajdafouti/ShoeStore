@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".ui.navigationscreens.shoedetails.ShoeStoreDetailsScreen">
+
+    <data>
+
+        <variable
+            name="ShowViewModel"
+            type="com.udacity.shoestore.ui.viewmodel.ShoeViewModel" />
+    </data>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="visible">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tv_header"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginStart="@dimen/dimen10"
+                android:layout_marginTop="@dimen/dimen10"
+                android:text="@string/shoe_title"
+                android:textColor="@color/black"
+                android:textSize="@dimen/dimen25sp" />
+
+            <TextView
+                android:id="@+id/tv_show_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginStart="5dp"
+                android:layout_marginTop="10dp"
+                android:text="@string/shoe_name_title"
+                android:textColor="@color/black"
+                android:textSize="@dimen/dimen15sp" />
+
+            <EditText
+                android:id="@+id/et_shoename"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:layout_marginTop="5dp"
+                android:hint="@string/shoe_name_text"
+                android:text="@={ShowViewModel.newShoeItem.name}"
+                android:textSize="@dimen/dimen12sp">
+
+            </EditText>
+
+            <TextView
+                android:id="@+id/tv_company_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginStart="@dimen/dimen5"
+                android:layout_marginTop="@dimen/dimen5"
+                android:text="@string/company_name_title"
+                android:textColor="@color/black"
+                android:textSize="@dimen/dimen15sp" />
+
+            <EditText
+                android:id="@+id/et_company_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dimen5"
+                android:layout_marginTop="@dimen/dimen5"
+                android:hint="@string/company_name_hint"
+                android:text="@={ShowViewModel.newShoeItem.company}"
+                android:textSize="@dimen/dimen12sp" />
+
+            <TextView
+                android:id="@+id/tv_shoe_size"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginStart="@dimen/dimen5"
+                android:layout_marginTop="@dimen/dimen5"
+                android:text="@string/shoe_size"
+                android:textColor="@color/black"
+                android:textSize="@dimen/dimen15sp" />
+
+            <EditText
+                android:id="@+id/et_shoe_size"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dimen5"
+                android:layout_marginTop="@dimen/dimen5"
+                android:hint="@string/shoe_size_hint"
+                android:text="@={``+ShowViewModel.newShoeItem.size}"
+                android:textSize="@dimen/dimen12sp" />
+
+            <TextView
+                android:id="@+id/tv_shoe_description"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginStart="5dp"
+                android:layout_marginTop="5dp"
+                android:text="@string/shoe_description"
+                android:textColor="@color/black"
+                android:textSize="@dimen/dimen15sp" />
+
+            <EditText
+                android:id="@+id/et_shoe_description"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dimen5"
+                android:layout_marginTop="@dimen/dimen5"
+                android:hint="@string/shoe_description_hint"
+                android:inputType="text"
+                android:text="@={ShowViewModel.newShoeItem.description}"
+                android:textSize="@dimen/dimen12sp" />
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="50dp">
+
+                <Button
+                    android:id="@+id/save_buttom"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_marginStart="@dimen/dimen5"
+                    android:enabled="false"
+                    android:text="@string/SaveButton" />
+
+                <Button
+                    android:id="@+id/cancel_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginEnd="@dimen/dimen5"
+                    android:text="@string/CancelButtom"
+                    tools:ignore="RelativeOverlap" />
+            </RelativeLayout>
+        </LinearLayout>
+
+    </ScrollView>
+
+</layout>
