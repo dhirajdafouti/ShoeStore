@@ -59,7 +59,7 @@ class ShoeStoreListingScreen : Fragment() {
      */
     private fun createShoeItem() {
         Log.d(TAG, "New Shoe Item is created... ")
-        viewModel.finalShoeList.observe(viewLifecycleOwner, Observer { shoeList ->
+        viewModel.shoeList.observe(viewLifecycleOwner, Observer { shoeList ->
             val shoeLayout: LinearLayout =
                 binding.shoelistlayout
             if (viewModel.shoeListEmpty()) {

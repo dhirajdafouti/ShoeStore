@@ -19,7 +19,7 @@
         <ScrollView
             android:layout_width="match_parent"
             android:layout_height="match_parent">
-
+            <!--Used LinearLayout is used as Rubric requirement not to Recycler, adding item one after the another { item layout (card-view )} in this Linear Layout.-->
             <LinearLayout
                 android:id="@+id/shoelistlayout"
                 android:layout_width="match_parent"

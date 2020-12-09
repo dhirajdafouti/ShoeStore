@@ -23,7 +23,7 @@ class ShoeViewModel : ViewModel() {
     private val _shoeList = MutableLiveData<MutableList<Shoe>>()
 
     //getter method of ShoeList displayed on the listscreen
-    val finalShoeList: LiveData<MutableList<Shoe>>
+    val shoeList: LiveData<MutableList<Shoe>>
         get() = _shoeList
 
 

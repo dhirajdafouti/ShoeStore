@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     tools:context=".ui.navigationscreens.shoedetails.ShoeStoreDetailsScreen">
 
@@ -9,141 +10,165 @@
             name="ShowViewModel"
             type="com.udacity.shoestore.ui.viewmodel.ShoeViewModel" />
     </data>
-
-    <ScrollView
+    <!--Used ConstraintLayout since all I wanted to do is display one item after another including button,with
+        ConstraintLayout I can position widgets in any place to this view without adding complexity like nested layout .-->
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:visibility="visible">
 
-
-        <LinearLayout
+        <TextView
+            android:id="@+id/tv_header"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:layout_marginStart="@dimen/dimen10"
+            android:layout_marginTop="@dimen/dimen10"
+            android:text="@string/shoe_title"
+            android:textColor="@color/black"
+            android:textSize="@dimen/dimen25sp"
+            app:layout_constraintBottom_toTopOf="@+id/tv_show_name"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-            <TextView
-                android:id="@+id/tv_header"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                android:layout_marginStart="@dimen/dimen10"
-                android:layout_marginTop="@dimen/dimen10"
-                android:text="@string/shoe_title"
-                android:textColor="@color/black"
-                android:textSize="@dimen/dimen25sp" />
+        <TextView
+            android:id="@+id/tv_show_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/shoe_name_title"
+            android:textColor="@color/black"
+            android:textSize="@dimen/dimen15sp"
+            app:layout_constraintBottom_toBottomOf="@id/tv_header"
+            app:layout_constraintBottom_toTopOf="@+id/et_shoename"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent" />
 
-            <TextView
-                android:id="@+id/tv_show_name"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                android:layout_marginStart="5dp"
-                android:layout_marginTop="10dp"
-                android:text="@string/shoe_name_title"
-                android:textColor="@color/black"
-                android:textSize="@dimen/dimen15sp" />
+        <EditText
+            android:id="@+id/et_shoename"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dimen10"
+            android:layout_marginBottom="20dp"
+            android:hint="@string/shoe_name_text"
+            android:text="@={ShowViewModel.newShoeItem.name}"
+            android:textSize="@dimen/dimen12sp"
+            app:layout_constraintBottom_toTopOf="@+id/tv_company_name"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent">
 
-            <EditText
-                android:id="@+id/et_shoename"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="5dp"
-                android:layout_marginTop="5dp"
-                android:hint="@string/shoe_name_text"
-                android:text="@={ShowViewModel.newShoeItem.name}"
-                android:textSize="@dimen/dimen12sp">
+        </EditText>
 
-            </EditText>
 
-            <TextView
-                android:id="@+id/tv_company_name"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                android:layout_marginStart="@dimen/dimen5"
-                android:layout_marginTop="@dimen/dimen5"
-                android:text="@string/company_name_title"
-                android:textColor="@color/black"
-                android:textSize="@dimen/dimen15sp" />
+        <TextView
+            android:id="@+id/tv_company_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="10dp"
+            android:text="@string/company_name_title"
+            android:textColor="@color/black"
+            android:textSize="@dimen/dimen15sp"
+            app:layout_constraintBottom_toTopOf="@+id/et_company_name"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent" />
 
-            <EditText
-                android:id="@+id/et_company_name"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/dimen5"
-                android:layout_marginTop="@dimen/dimen5"
-                android:hint="@string/company_name_hint"
-                android:text="@={ShowViewModel.newShoeItem.company}"
-                android:textSize="@dimen/dimen12sp" />
+        <EditText
+            android:id="@+id/et_company_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            android:hint="@string/company_name_hint"
+            android:text="@={ShowViewModel.newShoeItem.company}"
+            android:textSize="@dimen/dimen12sp"
+            app:layout_constraintBottom_toTopOf="@+id/tv_shoe_size"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent" />
 
-            <TextView
-                android:id="@+id/tv_shoe_size"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                android:layout_marginStart="@dimen/dimen5"
-                android:layout_marginTop="@dimen/dimen5"
-                android:text="@string/shoe_size"
-                android:textColor="@color/black"
-                android:textSize="@dimen/dimen15sp" />
+        <TextView
+            android:id="@+id/tv_shoe_size"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="10dp"
+            android:text="@string/shoe_size"
+            android:textColor="@color/black"
+            android:textSize="@dimen/dimen15sp"
+            app:layout_constraintBottom_toTopOf="@+id/et_shoe_size"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent" />
 
-            <EditText
-                android:id="@+id/et_shoe_size"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/dimen5"
-                android:layout_marginTop="@dimen/dimen5"
-                android:hint="@string/shoe_size_hint"
-                android:text="@={``+ShowViewModel.newShoeItem.size}"
-                android:textSize="@dimen/dimen12sp" />
+        <EditText
+            android:id="@+id/et_shoe_size"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            android:hint="@string/shoe_size_hint"
+            android:text="@={``+ShowViewModel.newShoeItem.size}"
+            android:textSize="@dimen/dimen12sp"
+            app:layout_constraintBottom_toTopOf="@+id/tv_shoe_description"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent" />
 
-            <TextView
-                android:id="@+id/tv_shoe_description"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                android:layout_marginStart="5dp"
-                android:layout_marginTop="5dp"
-                android:text="@string/shoe_description"
-                android:textColor="@color/black"
-                android:textSize="@dimen/dimen15sp" />
+        <TextView
+            android:id="@+id/tv_shoe_description"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="@dimen/dimen10"
+            android:text="@string/shoe_description"
+            android:textColor="@color/black"
+            android:textSize="@dimen/dimen15sp"
+            app:layout_constraintBottom_toTopOf="@+id/et_shoe_description"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent" />
 
-            <EditText
-                android:id="@+id/et_shoe_description"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/dimen5"
-                android:layout_marginTop="@dimen/dimen5"
-                android:hint="@string/shoe_description_hint"
-                android:inputType="text"
-                android:text="@={ShowViewModel.newShoeItem.description}"
-                android:textSize="@dimen/dimen12sp" />
+        <EditText
+            android:id="@+id/et_shoe_description"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/dimen50"
+            android:hint="@string/shoe_description_hint"
+            android:inputType="text"
+            android:text="@={ShowViewModel.newShoeItem.description}"
+            android:textSize="@dimen/dimen12sp"
+            app:layout_constraintBottom_toTopOf="@id/cancel_button"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:layout_editor_absoluteY="520dp" />
 
-            <RelativeLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="50dp">
+        <Button
+            android:id="@+id/save_buttom"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="@dimen/dimen10"
+            android:layout_marginBottom="@dimen/dimen50"
+            android:enabled="false"
+            android:text="@string/SaveButton"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
 
-                <Button
-                    android:id="@+id/save_buttom"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentStart="true"
-                    android:layout_marginStart="@dimen/dimen5"
-                    android:enabled="false"
-                    android:text="@string/SaveButton" />
+        <Button
+            android:id="@+id/cancel_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/dimen10"
+            android:layout_marginBottom="@dimen/dimen50"
+            android:text="@string/CancelButtom"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            tools:ignore="RelativeOverlap" />
 
-                <Button
-                    android:id="@+id/cancel_button"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentEnd="true"
-                    android:layout_marginEnd="@dimen/dimen5"
-                    android:text="@string/CancelButtom"
-                    tools:ignore="RelativeOverlap" />
-            </RelativeLayout>
-        </LinearLayout>
 
-    </ScrollView>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </layout>
